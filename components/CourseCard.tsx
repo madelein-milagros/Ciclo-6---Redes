@@ -12,11 +12,11 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, index }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="relative flex flex-col items-center w-full mb-12">
-      {/* Connector Line */}
+    <div className="relative flex flex-col items-center min-w-[300px] md:min-w-[400px]">
+      {/* Connector Line (Horizontal) */}
       {index !== 0 && (
         <div 
-          className="absolute -top-12 left-1/2 w-1 h-12 -translate-x-1/2 z-0"
+          className="absolute left-[-48px] top-[44px] w-12 h-1 z-0"
           style={{ backgroundColor: THEME.accent }}
         />
       )}
@@ -25,66 +25,57 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, index }) => {
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         style={{ backgroundColor: THEME.courseBg }}
-        className={`z-10 w-full max-w-2xl rounded-xl shadow-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 text-left overflow-hidden border-2 border-transparent hover:border-[#ab022f]`}
+        className={`z-10 w-full rounded-xl shadow-lg transition-all duration-300 transform hover:translate-y-[-4px] active:scale-95 text-left overflow-hidden border-2 border-transparent hover:border-white/50`}
       >
-        <div className="p-6 flex items-center gap-4">
-          <span className="text-3xl bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+        <div className="p-5 flex items-center gap-4">
+          <span className="text-2xl bg-white/10 p-2.5 rounded-lg backdrop-blur-sm shrink-0">
             {course.icon}
           </span>
-          <div className="flex-1">
-             <h3 className="text-white font-bold text-lg md:text-xl leading-tight">
+          <div className="flex-1 min-w-0">
+             <h3 className="text-white font-bold text-base md:text-lg leading-tight truncate">
                {course.title}
              </h3>
-             <p className="text-white/70 text-sm mt-1">Haga clic para ver detalles</p>
-          </div>
-          <div className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
-             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-             </svg>
+             <p className="text-white/60 text-xs mt-0.5 uppercase tracking-tighter">Detalles ↓</p>
           </div>
         </div>
       </button>
 
-      {/* Expandable Content */}
+      {/* Expandable Content (Vertical relative to card) */}
       <div 
-        className={`w-full max-w-2xl overflow-hidden transition-all duration-500 ease-in-out bg-white rounded-b-xl border-x-2 border-b-2 shadow-inner ${
-          isExpanded ? 'max-h-[800px] opacity-100 py-6 px-8' : 'max-h-0 opacity-0'
+        className={`w-full mt-2 overflow-hidden transition-all duration-500 ease-in-out bg-white rounded-xl shadow-xl border-t-4 ${
+          isExpanded ? 'max-h-[500px] opacity-100 py-5 px-6 border-b' : 'max-h-0 opacity-0'
         }`}
-        style={{ borderColor: THEME.accent }}
+        style={{ borderTopColor: THEME.accent }}
       >
-        <div className="space-y-4">
+        <div className="space-y-4 text-sm">
           {course.officialName && (
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-gray-500">📘 Nombre Oficial</p>
-              <p className="text-gray-800 font-medium text-lg">{course.officialName}</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">📘 Oficial</p>
+              <p className="text-gray-800 font-semibold">{course.officialName}</p>
             </div>
           )}
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-gray-500">🛠️ Descripción del Contenido</p>
-            <p className="text-gray-700 leading-relaxed">{course.description}</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">🛠️ Contenido</p>
+            <p className="text-gray-600 leading-tight">{course.description}</p>
           </div>
 
           {course.certification && (
-            <div className="bg-gray-50 p-3 rounded-lg border-l-4" style={{ borderLeftColor: THEME.accent }}>
-              <p className="text-sm font-semibold uppercase tracking-wider text-gray-500">🏆 Certificación Asociada</p>
-              <p className="text-gray-800 font-semibold">{course.certification}</p>
+            <div className="bg-gray-50 p-2 rounded border-l-2" style={{ borderLeftColor: THEME.accent }}>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">🏆 Certificación</p>
+              <p className="text-gray-800 font-medium text-xs">{course.certification}</p>
             </div>
           )}
 
           {course.link && (
-            <div className="pt-2">
+            <div className="pt-1">
               <a 
                 href={course.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white font-medium transition-all hover:brightness-110 active:brightness-90 shadow-md"
-                style={{ backgroundColor: THEME.accent }}
+                className="block text-center text-[11px] py-2 rounded bg-gray-100 font-bold text-gray-700 hover:bg-gray-200 transition-colors"
               >
-                🔗 Ver curso oficial
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
+                🔗 VER CURSO OFICIAL
               </a>
             </div>
           )}

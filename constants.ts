@@ -7,7 +7,8 @@ export const COURSES: Course[] = [
     title: "Gestión de Sistemas de Seguridad de la Información",
     description: "Marco normativo ISO/IEC 27001, gestión de riesgos, políticas de seguridad, controles técnicos y organizativos, auditorías y cumplimiento legal.",
     certification: "ISO/IEC 27001 Foundation / CompTIA Security+",
-    icon: "🛡️"
+    icon: "🛡️",
+    videoUrl: "https://youtu.be/dQw4w9WgXcQ?si=J4DGjt5Wvlxdei5m"
   },
   {
     id: 2,
@@ -16,34 +17,38 @@ export const COURSES: Course[] = [
     link: "https://www.netdevgroup.com/online/courses/virtualization/cloud-and-virtualization-concepts",
     description: "Fundamentos de virtualización (VMware, Hyper-V, KVM), arquitectura cloud (IaaS, PaaS, SaaS), servicios de AWS/Azure y migración a la nube.",
     certification: "NetDev Group – Cloud & Virtualization Concepts / AWS Cloud Practitioner",
-    icon: "☁️"
+    icon: "☁️",
+    videoUrl: "https://youtu.be/dQw4w9WgXcQ?si=J4DGjt5Wvlxdei5m"
   },
   {
     id: 3,
     title: "Implementación e integración de tecnologías emergentes",
     description: "Evaluación e integración de tecnologías como IA aplicada a redes, edge computing, blockchain para seguridad, 5G y redes definidas por software (SDN).",
     certification: "Cisco DevNet Associate / Microsoft Azure Fundamentals",
-    icon: "🚀"
+    icon: "🚀",
+    videoUrl: "https://youtu.be/dQw4w9WgXcQ?si=J4DGjt5Wvlxdei5m"
   },
   {
     id: 4,
     title: "Interoperabilidad con Redes Industriales",
     description: "Protocolos industriales (Modbus, PROFINET, DNP3), arquitectura OT/IT, seguridad en entornos SCADA, integración con redes corporativas y ciberseguridad industrial.",
     certification: "ISA/IEC 62443 Cybersecurity Specialist / Cisco CyberOps",
-    icon: "🏭"
+    icon: "🏭",
+    videoUrl: "https://youtu.be/dQw4w9WgXcQ?si=J4DGjt5Wvlxdei5m"
   },
   {
     id: 5,
     title: "Comunicaciones Inalámbricas",
     description: "Estándares Wi-Fi (802.11ax/Wi-Fi 6), Bluetooth, Zigbee, redes celulares (4G/5G), diseño de redes inalámbricas, seguridad WPA3 y análisis de espectro.",
     certification: "CWNA (Certified Wireless Network Administrator) / CompTIA Network+",
-    icon: "📶"
+    icon: "📶",
+    videoUrl: "https://youtu.be/dQw4w9WgXcQ?si=J4DGjt5Wvlxdei5m"
   }
 ];
 
 export const CHECKPOINT: CheckpointData = {
-  title: "Checkpoint del Ciclo 6 – Proyecto Final de Grado",
-  description: "Diseña e implementa una infraestructura híbrida (on-premise + cloud) con monitoreo, automatización, seguridad perimetral e integración de tecnologías emergentes (IoT, redes inalámbricas y sistemas industriales)."
+  title: "CONSEJO PROFESIONAL DE CIERRE",
+  description: "¡Felicidades por llegar a la meta! Has recorrido un camino intenso, desde la ciberseguridad hasta el Cloud y las redes industriales. Tu carrera apenas comienza: mantente siempre curioso, especialízate en una tecnología que ames y recuerda que en tus manos está la infraestructura que mueve al mundo. ¡El futuro de la conectividad es tuyo!"
 };
 
 export const THEME = {

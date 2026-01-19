@@ -7,6 +7,7 @@ export interface Course {
   link?: string;
   certification?: string;
   icon?: string;
+  videoUrl?: string;
 }
 
 export interface CheckpointData {
